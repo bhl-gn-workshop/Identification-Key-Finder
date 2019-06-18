@@ -13,7 +13,7 @@ find data -type f -exec grep -n name /dev/null {} \; \
 # Get table of hash, barcode.  Tab-separated.  Note presence of
 # tab character in this shell command.
 
-preston log | grep hasVersion | grep -v well-known | \
+preston log -l tsv | grep hasVersion | grep -v well-known | \
    sed -e "s+.*/download/\(.*\)/mobot.*sha256/\(.*\)> .+\2$TAB\1+" \
    > hash-barcode.tsv
 
