@@ -3,7 +3,7 @@ Tools and methods for finding Identification Keys in BHL items. Goals: Page leve
 
 1. get the data - [BHL Completeness](./bhl_completeness.md) - do we have all the data?
 
-2. method to find keys 
+2. method to find keys - [Finding Keys](./finding_keys.md) 
 
 3. method to assess quality of key finder
 
