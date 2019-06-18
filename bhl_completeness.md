@@ -33,6 +33,17 @@ $ cat bhl_djvu_404.tsv | wc -l
 
 See [bhl_djvu_404.tsv](./bhl_djvu_404.tsv) for results.
 
+The total number of pages with text
+
+```
+$ preston ls -l tsv | gre-v well-known | grep hasVersion | sort | uniq | wc -l
+227078
+```
+
+So, now we have a measure for completeness of the BHL corpus ~ 57621.0 / (57621 + 227078)=> 20% missing pages.
+
+
+
 About 57k missing text pages on archive when using the pattern:
 
 1. extract bar codes from https://www.biodiversitylibrary.org/data/item.txt
