@@ -1,5 +1,29 @@
-# 
+# BHL Completeness
 
+Do we have all the BHL text?
+
+# getting the data
+
+rsync bhl from preston remote server (e.g., ```rsync rsync -Pavz preston@preston.guoda.bio:/var/www/html/preston-bhl/ ./data/```)
+
+rsync from local hard disk (sneaker net) (e.g., ```rsync -Pa /media/jorrit/cobaltblue/preston-bhl/data/ ./data/``` where /media/jorrit/cobaltblue is some local directory. 
+
+install [preston](https://github.com/bio-guoda/preston#install) for commandline data access
+
+# data version 
+In sections below, the following BHL versions are used:
+
+```shell
+$ preston history 
+<0659a54f-b713-4f86-a917-5be166a14110> <http://purl.org/pav/hasVersion> <hash://sha256/89926f33157c0ef057b6de73f6c8be0060353887b47db251bfd28222f2fd801a> .
+<hash://sha256/41b19aa9456fc709de1d09d7a59c87253bc1f86b68289024b7320cef78b3e3a4> <http://purl.org/pav/previousVersion> <hash://sha256/89926f33157c0ef057b6de73f6c8be0060353887b47db251bfd28222f2fd801a> .
+```
+this links to specific date/time of when BHL versions were captured. 
+
+Preston helps to version the *entire* BHL data network, so we have a well defined dataset to work with.
+
+
+# finding all items without texts
 ```shell
 $ preston ls -l tsv | grep well-known | grep hasVersion | cut -f1 | sort | uniq > bhl_djvu_404.tsv
 
