@@ -9,7 +9,7 @@ Tools and methods for finding Identification Keys in BHL items. Goals: Page leve
 
 4. generate key -> bhl item/page and taxonomic name index
 
-5. lookup likely BHL key by name. mock-up ideas for including the likely Key links into BHL Search - [BHL Key Lookup Use Cases](./key_lookup_usecases.md)
+5. find keys in BHL - [BHL Key Lookup Use Cases](./key_lookup_usecases.md)
 
 Discussion/Known limitations:
 
