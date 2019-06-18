@@ -5,7 +5,7 @@
 
 or 
 
-```grep -r -n -e '\bkey\b' data/ > BHLsample.txt```
+```grep -r -n -i -e '\bkey\b' data/ > BHLsample.txt```
 
 3. Get a file with three columns: (1) Extracted line with "key" occurrence and (2) item id (3) line number of "key" occurrence
 4. Visually inspect results for false positives
