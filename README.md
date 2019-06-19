@@ -1,5 +1,10 @@
 # Identification-Key-Finder
 Tools and methods for finding Identification Keys in BHL items. 
+Searching and browsing the vast BHL corpus can be challenging with the tools currently available, e.g., sample search results. We want to explore ways to enrich BHL metadata, so users have more options to filter search results. We decided to focus on tools to filter identification keys because we expected that they would be easy to locate in the BHL corpus based on their headings and textual structure. The files in this repository include attempts and data used, as well as discussions of what did not work.
+
+The research is detailed in this Google Doc: https://docs.google.com/document/d/1JygDSfvCKE_kHZwXElklTqu4DI2vdpE34IbcSIjuv8U/edit?usp=sharing. 
+
+**When files are added to this folder, please add them to the index in this README file.**
 
 Things to do:
 
