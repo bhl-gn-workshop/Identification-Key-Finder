@@ -3,7 +3,7 @@ Tools and methods for finding Identification Keys in BHL items.
 
 Things to do:
 
-1. @jpoelen: move repo to workshop 
+1. Jorrit: move repo to workshop 
 2. All: Index all the files in the repo
 
 
