@@ -21,8 +21,8 @@ Goals: Page level ID, multiple languages, e.g. taxonomic searching already in BH
 5. find keys in BHL - [BHL Key Lookup Use Cases](./key_lookup_usecases.md)
 
 Index of Files:
-1. [BHLKeySamples.tsv.zip] (./BHLKeySamples.tsv.zip): This file contains a run of line-by-line matches of the entire BHL corpus coming from the Internet Archive. This contains "key" or "Key" when it appears alone.
-2. [BHLKeys.png] (./BHLKeys.png): This file contains an imagined mockup of Identification Keys as an option in BHL subject search.
+1. [BHLKeySamples.tsv.zip](./BHLKeySamples.tsv.zip): This file contains a run of line-by-line matches of the entire BHL corpus coming from the Internet Archive. This contains "key" or "Key" when it appears alone.
+2. [BHLKeys.png](./BHLKeys.png): This file contains an imagined mockup of Identification Keys as an option in BHL subject search.
 3. OCR Key Title Examples.csv: This file contains examples of identification key headers fromthe BHL as they look in OCR.
 4. Problems Encountered in Locating Key Titles.docx: This file contains problems encountered as we began searching the line-by-line OCR.
 5. README.md: This file.
