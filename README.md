@@ -3,8 +3,8 @@ Tools and methods for finding Identification Keys in BHL items.
 
 Things to do:
 
-1. Jorrit: move repo to workshop 
-2. All: Index all the files in the repo
+1. All: Index all the files in the repo
+2. All: Fill out google drive document
 
 Goals: Page level ID, multiple languages, e.g. taxonomic searching already in BHL.
 
