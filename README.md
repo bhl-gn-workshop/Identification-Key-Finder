@@ -1,5 +1,14 @@
 # Identification-Key-Finder
-Tools and methods for finding Identification Keys in BHL items. Goals: Page level ID, multiple languages, e.g. taxonomic searching already in BHL.
+Tools and methods for finding Identification Keys in BHL items. 
+
+Things to do:
+
+1. @jpoelen: move repo to workshop 
+2. All: Index all the files in the repo
+
+
+
+Goals: Page level ID, multiple languages, e.g. taxonomic searching already in BHL.
 
 1. get the data - [BHL Completeness](./bhl_completeness.md) - do we have all the data?
 
