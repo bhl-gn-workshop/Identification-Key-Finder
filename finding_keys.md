@@ -14,11 +14,11 @@ A librarian, a biologist and two software engineers came up with the following h
 
 ## experiment 
 
-0. A BHL Corpus was acquired that contained 226k items with a volume of 120GB . Note that an estimated 20% of BHL OCR text was unavailable (see [BHL Completeness](./bhl-completeness.md).
+0. A BHL Corpus was acquired that contained 226k items with a volume of 120GB . Note that an estimated 20% of BHL OCR text was unavailable (see [BHL Completeness](./bhl_completeness.md)).
 1. a bash script, [find-keys.sh](./find-keys.sh) was created. The script takes two arguments (1) the location of the BHL corpus and (2) a regular expression for matching likely keys. 
 2. the scripts was run using regular expression ```Keys``` on the full bhl corpus on the item level.
-3. After about 50 minutes executing the script took about 50s on a 2011 dual core ubuntu linux laptop  
-4. the script completed a matching against all of BHL and captured the results in [itemurl-line-match.tsv.gz](./itemurl-line-match.tsv.gz). The first 10 lines look like: 
+3. the script completed in about 50 minutes on a 2011 dual core ubuntu linux laptop  
+4. the script completed a matching against all of BHL and captured the 1.4M results in [itemurl-line-match.tsv.gz](./itemurl-line-match.tsv.gz). The first 10 lines look like: 
 
  internet archive collection | bhl item | link to item text | line number | matching line
   --- | --- |--- | --- | ---
