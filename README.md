@@ -30,7 +30,7 @@ Index of Files:
 8. [hash-line-match.tsv.gz](./hash-line-match.tsv.gz): This is an intermediate file of finding_keys.md.
 9. [itemurl-line-match.tsv.gz](./itemurl-line-match.tsv.gz): This is the final result of the script run of find-keys.sh. This search includes compound words with "Key".
 10. [key_lookup_usecases.md](./key_lookup_usecases.md): This document describes the initial process of finding keys in the BHL corpus. 
-11. [OCR_Key_Title_Examples.csv](./OCR_Key_Title_Examples.csv): This file contains examples of identification key headers fromthe BHL as they look in OCR.
+11. [OCR_Key_Title_Examples.csv](./OCR Key Title Examples.csv): This file contains examples of identification key headers fromthe BHL as they look in OCR.
 12. [Problems Encountered in Locating Key Titles.docx](./Problems Encountered in Locating Key Titles.docx): This file contains problems encountered as we began searching the line-by-line OCR.
 13. README.md: This file.
 	
