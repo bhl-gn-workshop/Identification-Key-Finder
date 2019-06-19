@@ -29,6 +29,7 @@ cat $OLD_PWD/hash-line-match-unsorted.tsv | sort > $OLD_PWD/hash-line-match.tsv
 # Get table of hash, barcode.  Tab-separated.  Note presence of
 # tab character in this shell command.
 
+echo "Obtaining map from file hash to file barcode"
 preston log -l tsv > $OLD_PWD/log.tsv
 
 cat $OLD_PWD/log.tsv | grep archive.*hasVersion | grep -v well-known \
@@ -44,13 +45,16 @@ cat $OLD_PWD/log.tsv | grep archive.*hasVersion | grep -v well-known \
 # Get table of barcode, ... itemurl
 # sorted by barcode
 
-echo c
+echo "Obtaining map from barcode to BHL item"
 cat $OLD_PWD/log.tsv | head -n100 | grep item.txt | grep hasVersion | head -n 1 | cut -f 3 | preston get \
   | cut -f8,4 | tail -n +2 \
   | sort \
   > $OLD_PWD/barcode-itemurl.tsv
 
 # Join on hash, sort by barcode
+# Result is sorted by file hash
+
+echo "Joining on file hash and sorting"
 join --nocheck-order -t $'\t' -1 1 -2 1 $OLD_PWD/hash-barcode.tsv $OLD_PWD/hash-line-match.tsv | sort -k 2 >$OLD_PWD/barcode-line-match.tsv
 # ... result is sorted by hash ...
 
@@ -62,6 +66,7 @@ join --nocheck-order -t $'\t' -1 1 -2 1 $OLD_PWD/hash-barcode.tsv $OLD_PWD/hash-
 # Result of this command will have these fields:
 #   archive.org URL, BHL item URL, deeplinker URL, line number, match
 
+echo "Joining on barcode and sorting"
 join --nocheck-order -t $'\t' -1 1 -2 2 $OLD_PWD/barcode-itemurl.tsv $OLD_PWD/barcode-line-match.tsv \
   | sed -e "s+\(.*\)\t\(.*\)\t\(.*\)\t\(.*\)\t\(.*\)+https://archive.org/download/\1\t\2\thttps://deeplinker.bio/\3\t\4\t\5+" \
   > $OLD_PWD/itemurl-line-match.tsv
