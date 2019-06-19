@@ -26,7 +26,8 @@ A librarian, a biologist and two software engineers came up with the following h
 3. After about 50 minutes executing the script took about 50s on a 2011 dual core ubuntu linux laptop  
 4. the script completed a matching against all of BHL and captured the results in [itemurl-line-match.tsv.gz](./itemurl-line-match.tsv.gz). The first 10 lines look like: 
 
- internet archive collection | bhl item | item text | line number | matching line
+ internet archive collection | bhl item | link to item text | line number | matching line
+  --- | --- |--- | --- | ---
 https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|10867|belong we have the key-note to the common 
 https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|11012|living beings, it gave him the key to many mys- 
 https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|12431|common Five-Finger (Asterias) gives the key to 
