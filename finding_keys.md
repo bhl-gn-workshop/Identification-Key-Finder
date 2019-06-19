@@ -1,10 +1,4 @@
 This page describes a method on how to find items with keys on BHL.
-
-Questions:
-
-1. Can you link to a BHL page and jump to a specific line number in the OCR text?
-2. What are tools help annotate existing web accessible texts? (Hypothes.is?)
-3. Which software libraries or platforms can help with text classification (e.g., does this text contain a key?) and segmentation (e.g., which part of the text is a key)? (Stanford CoreNLP, OpenNLP)
  
 # Desired workflow for finding Keys
 
@@ -44,15 +38,14 @@ https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversityli
 
 Observations
 1. Librarian and biologist need to do many fast iterations to refine the key matching algorithms
-2. Software engineers need time to develop tools.
-3. a bash script produced different results depending on operating system (mac vs linux).
+1. Software engineers need time to develop tools.
+1. a bash script produced different results depending on operating system (mac vs linux).
 
 Open questions/ideas:
 
-1. Can you link to a location in specific BHL item by line number?
-2. What tools are available to visually annotate and select texts that describe a Key?
-3. What NLP (natural language processing) techniques/ algorithms can be used to help automate the detection and extraction of key candidates? 
-
+1. Can you link to a BHL page and jump to a specific line number in the OCR text?
+1. What tools are available to visually annotate and select texts that describe a Key?
+1. Which software libraries or platforms can help with text classification (e.g., does this text contain a key?) and segmentation (e.g., which part of the text is a key)? (Stanford CoreNLP, OpenNLP)
 
 ## details
 
