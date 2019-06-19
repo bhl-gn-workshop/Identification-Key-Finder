@@ -20,6 +20,21 @@ Goals: Page level ID, multiple languages, e.g. taxonomic searching already in BH
 
 5. find keys in BHL - [BHL Key Lookup Use Cases](./key_lookup_usecases.md)
 
+Index of Files:
+1. [BHLKeySamples.tsv.zip] (./BHLKeySamples.tsv.zip): This file contains a run of line-by-line matches of the entire BHL corpus coming from the Internet Archive. This contains "key" or "Key" when it appears alone.
+2. BHLKeys.png: This file contains an imagined mockup of Identification Keys as an option in BHL subject search.
+3. OCR Key Title Examples.csv: This file contains examples of identification key headers fromthe BHL as they look in OCR.
+4. Problems Encountered in Locating Key Titles.docx: This file contains problems encountered as we began searching the line-by-line OCR.
+5. README.md: This file.
+6. barcode-itemurl.tsv.gz: This is an intermediate file related barcodes of the items to the URL from the BHL from the data experiment scannign the entire corpus line-by-line of the BHL.
+7. bhl_completeness.md: This file contains a description of an assessment of the completeness of OCR text available through the BHL corpus.
+8. bhl_djvu_404.tsv: This file contains a list of broken links that should point to OCR text on internet archive.
+10. find_keys.sh: This script contains a search string that is applied to the BHL corpus and creates a list of the line number and URL(s) of the item. The URLs include links to the BHL item location, the Internet Archive location, and the text file.
+11. finding_keys.md: This document details methods and results of a single run of the find_keys.sh script.
+12. hash-line-match.tsv.gz: This is an intermediate file of finding_keys.md.
+13. itemurl-line-match.tsv.gz: This is the final result of the script run of find-keys.sh. This search includes compound words with "Key".
+14. key_lookup_usecases.md: This document describes the initial process of finding keys in the BHL corpus. 
+	
 Discussion/Known limitations:
 
 1. Locating identification keys in the BHL corpus turns out to be more difficult than expected.  The major problem is that we are unable to distinguish the subheadings introducing a key from citations of works that are identification keys and other mentions of keys that are not immediately followed by a key. Joel mentioned that he may be able to come up with a way to identify headings in the text. If this becomes available.  It would make it much easier to find the beginnings of keys.
