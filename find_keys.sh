@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# usage: find_keys.sh [path of Preston BHL data folder] [regex]
+#
+#   example: ./find_keys.sh /some/path/bhl/data Keys
+#
+# tested on Ubuntu 18.04  
 
 set -xe 
 OLD_PWD=$PWD
@@ -6,8 +12,6 @@ DATA_DIR=$1
 REGEX=$2
 
 cd $DATA_DIR
-
-TAB=\t
 
 # Get table of hash, line number, text matching regex.  Colon-separated.
 
