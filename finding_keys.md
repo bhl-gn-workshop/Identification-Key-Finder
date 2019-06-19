@@ -16,10 +16,12 @@ A librarian, a biologist and two software engineers came up with the following h
 
 0. A BHL Corpus was acquired that contained 226k items with a volume of 120GB . Note that an estimated 20% of BHL OCR text was unavailable (see [BHL Completeness](./bhl_completeness.md)).
 1. a bash script, [find-keys.sh](./find-keys.sh) was created. The script takes two arguments (1) the location of the BHL corpus and (2) a regular expression for matching likely keys. 
-2. the scripts was run using regular expression ```Keys``` on the full bhl corpus on the item level.
+2. the scripts was run using regular expression ```\bkey\b``` on the full bhl corpus on the item level.
 3. the script completed in about 50 minutes on a 2011 dual core ubuntu linux laptop  
-4. the script completed a matching against all of BHL and captured the 1.4M results in [itemurl-line-match.tsv.gz](./itemurl-line-match.tsv.gz). The first 10 lines look like: 
+4. the script completed a matching against all of BHL and captured the 1.4M (UPDATE) results in [itemurl-line-match.tsv.gz](./itemurl-line-match.tsv.gz). The first 10 lines look like: 
 
+
+(TABLE NEED UPDATE)
  internet archive collection | bhl item | link to item text | line number | matching line
   --- | --- |--- | --- | ---
 https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|10867|belong we have the key-note to the common 
@@ -50,49 +52,54 @@ Open questions/ideas:
 ## details
 
 ```shell
-$ time ./find_keys.sh /media/jorrit/cobaltblue/preston-bhl/ Key
+$ time ./find_keys.sh /media/jorrit/cobaltblue/preston-bhl/ "\bkey\b"
 + OLD_PWD=/home/jorrit/proj/gn-hackathon/Identification-Key-Finder
 + DATA_DIR=/media/jorrit/cobaltblue/preston-bhl/
-+ REGEX=Key
++ REGEX='\bkey\b'
 + cd /media/jorrit/cobaltblue/preston-bhl/
-+ TAB=t
 + echo 'Scanning BHL corpus for matches to regular expression'
 Scanning BHL corpus for matches to regular expression
 + echo 'output to /home/jorrit/proj/gn-hackathon/Identification-Key-Finder/hash-line-match.tsv'
 output to /home/jorrit/proj/gn-hackathon/Identification-Key-Finder/hash-line-match.tsv
 + find data -type f
-+ xargs grep -n Key -w -i
++ xargs grep -n '\bkey\b' -w -i
 + sed -e 's+^.*/../../++'
 + sed -e 's/:/\t/'
 + sed -e 's/:/\t/'
 + cat /home/jorrit/proj/gn-hackathon/Identification-Key-Finder/hash-line-match-unsorted.tsv
 + sort
++ echo 'Obtaining map from file hash to file barcode'
+Obtaining map from file hash to file barcode
 + preston log -l tsv
 + cat /home/jorrit/proj/gn-hackathon/Identification-Key-Finder/log.tsv
 + grep 'archive.*hasVersion'
 + grep -v well-known
 + sed -e 's+https://archive.org/download/\([^/]*\).*sha256/\(.*\)+\2\t\1+'
 + sort
-+ echo c
-c
++ echo 'Obtaining map from barcode to BHL item'
+Obtaining map from barcode to BHL item
 + cat /home/jorrit/proj/gn-hackathon/Identification-Key-Finder/log.tsv
 + head -n100
-+ grep hasVersion
 + head -n 1
-+ preston get
-+ sort
-+ tail -n +2
-+ cut -f 3
-+ cut -f8,4
++ grep hasVersion
 + grep item.txt
++ tail -n +2
++ sort
++ cut -f8,4
++ cut -f 3
++ preston get
++ echo 'Joining on file hash and sorting'
+Joining on file hash and sorting
 + join --nocheck-order -t '	' -1 1 -2 1 /home/jorrit/proj/gn-hackathon/Identification-Key-Finder/hash-barcode.tsv /home/jorrit/proj/gn-hackathon/Identification-Key-Finder/hash-line-match.tsv
 + sort -k 2
++ echo 'Joining on barcode and sorting'
+Joining on barcode and sorting
 + join --nocheck-order -t '	' -1 1 -2 2 /home/jorrit/proj/gn-hackathon/Identification-Key-Finder/barcode-itemurl.tsv /home/jorrit/proj/gn-hackathon/Identification-Key-Finder/barcode-line-match.tsv
 + sed -e 's+\(.*\)\t\(.*\)\t\(.*\)\t\(.*\)\t\(.*\)+https://archive.org/download/\1\t\2\thttps://deeplinker.bio/\3\t\4\t\5+'
 
-real	49m16.872s
-user	9m19.986s
-sys	3m59.397s
+real	46m36.495s
+user	9m22.076s
+sys	3m57.117s
 ```
 
 ## system info
