@@ -4,7 +4,7 @@ Searching and browsing the vast BHL corpus can be challenging with the tools cur
 
 The research is detailed in this Google Doc: https://docs.google.com/document/d/1JygDSfvCKE_kHZwXElklTqu4DI2vdpE34IbcSIjuv8U/edit?usp=sharing. 
 
-**When files are added to this folder, please add them to the index in this README file.**
+**_When files are added to this folder, please add them to the index in this README file._**
 
 Things to do:
 
