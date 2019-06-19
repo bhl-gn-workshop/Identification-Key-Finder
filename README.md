@@ -2,8 +2,6 @@
 ## Tools and methods for finding Identification Keys in BHL items. 
 Searching and browsing the vast BHL corpus can be challenging with the tools currently available, e.g., sample search results. We want to explore ways to enrich BHL metadata, so users have more options to filter search results. We decided to focus on tools to filter identification keys because we expected that they would be easy to locate in the BHL corpus based on their headings and textual structure. The files in this repository include attempts and data used, as well as discussions of what did not work.
 
-The research is detailed in this Google Doc: https://docs.google.com/document/d/1JygDSfvCKE_kHZwXElklTqu4DI2vdpE34IbcSIjuv8U/edit?usp=sharing. 
-
 **_When files are added to this folder, please add them to the index in this README file._**
 
 Things to do:
@@ -39,10 +37,3 @@ Index of Files:
 12. [ProblemsNoticedSearchingKeys.txt](./ProblemsNoticedSearchingKeys.txt): This is a list of problems encountered as we began searching the line-by-line OCR.
 13. README.md: This is the file you are in.
 	
-Discussion/Known limitations:
-
-1. Locating identification keys in the BHL corpus turns out to be more difficult than expected.  The major problem is that we are unable to distinguish the subheadings introducing a key from citations of works that are identification keys and other mentions of keys that are not immediately followed by a key. Joel mentioned that he may be able to come up with a way to identify headings in the text. If this becomes available.  It would make it much easier to find the beginnings of keys.
-2. Because identification keys generally have a distinct structure, AI-based approaches for locating keys may be useful. These could be based either on OCR text or page images. To get this going, we would need a diverse sample of keys from the BHL corpus.
-3. As a first step stick to item-level approach that would allow us to create an index of BHL works that contain identification keys. Ideally this would be followed with a more precise approach that would pinpoint the specific locations of keys in the text, so we could support queries of taxon names that occur in identification keys. 
-4. How to integrate the links to likely keys into BHL search pages? What does it take to add a Subject header (e.g. LC classification code) for "Keys" in BHL? 
-5. As a first step, we could set up curated BHL collections for identification keys in works annotated with certain subjects like Entomology, Botany, etc.
