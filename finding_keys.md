@@ -185,7 +185,7 @@ plot(item_matches$count, log="xy", xlab='bhl items', ylab='match count', main='d
 ```
 The R script above was used to produce the plot below. 
 
-[![matches-per-item-sorted-descending.png](./matches-per-item-sorted-descending.png)]
+![matches-per-item-sorted-descending.png](./matches-per-item-sorted-descending.png)
 
 ### system info
 A Ubuntu Linux 18.04 operating was used, running on Lenovo Laptop T430 8GB RAM with dual core Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz.
