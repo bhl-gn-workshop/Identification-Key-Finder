@@ -36,7 +36,7 @@ Index of Files:
  * [BHLKeySamples.tsv.zip](./BHLKeySamples.tsv.zip): This is run of line-by-line matches of the entire BHL corpus coming from the Internet Archive. This contains "key" or "Key" when it appears alone.
  * [find_keys.sh](./find_keys.sh): This script contains a search string that is applied to the BHL corpus and creates a list of the line number and URL(s) of the item. The URLs include links to the BHL item location, the Internet Archive location, and the text file.
  * [finding_keys.md](./finding_keys.md): This document details methods and results of a single run of the find_keys.sh script.
-* [hash-line-match.tsv.gz](./hash-line-match.tsv.gz): This is an intermediate file of finding_keys.md.
+* [hash-line-match.tsv.gz](./hash-line-match.tsv.gz): This is an intermediate file of finding_keys.sh .
  * [itemurl-line-match.tsv.gz](./itemurl-line-match.tsv.gz): This is the final result of the script run of find-keys.sh. This search includes compound words with "Key".
  * [key_lookup_usecases.md](./key_lookup_usecases.md): This document describes the initial process of finding keys in the BHL corpus.
  * [matches-per-item-sorted-descending.png](./matches-per-item-sorted-descending.png): This image shows the relationship of bhl items ordered by match count on a log-log scale.
