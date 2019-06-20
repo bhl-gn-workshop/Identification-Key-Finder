@@ -18,22 +18,21 @@ A librarian, a biologist and two software engineers came up with the following h
 1. a bash script, [find-keys.sh](./find-keys.sh) was created. The script takes two arguments (1) the location of the BHL corpus and (2) a regular expression for matching likely keys. 
 2. the scripts was run using regular expression ```\bkey\b``` on the full bhl corpus on the item level.
 3. the script completed in about 50 minutes on a 2011 dual core ubuntu linux laptop  
-4. the script completed a matching against all of BHL and captured the 1.4M (UPDATE) results in [itemurl-line-match.tsv.gz](./itemurl-line-match.tsv.gz). The first 10 lines look like: 
+4. the script completed a matching against all of BHL and captured the 758k unique results in [itemurl-line-match.tsv.gz](./itemurl-line-match.tsv.gz). The table below contains the first 10 lines of the file. For sake of simplicity the urls were turned into labels ia (internet archive), bhl (biodiversity heritage library) and ocr test (a preston archive at deeplinker)
 
-
-(TABLE NEED UPDATE)
- internet archive collection | bhl item | link to item text | line number | matching line
+ bhl item links | line number | matching line
   --- | --- |--- | --- | ---
-https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|10867|belong we have the key-note to the common 
-https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|11012|living beings, it gave him the key to many mys- 
-https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|12431|common Five-Finger (Asterias) gives the key to 
-https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|2616|and is the key to their whole organization. A 
-https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|3049|fications ; and that we have already the key by 
-https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|513|whole. It was Cuvier who found the key. He 
-https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|5306|pitched on a different key, it is true, but a sound 
-https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|673|and gave us the key-note to the natural affinities 
-https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|7270|crescent, from Virginia Key and Key Biscayne, 
-https://archive.org/download/00921238.85096.emory.edu|https://www.biodiversitylibrary.org/item/174408 |https://deeplinker.bio/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7|7271|almost adjoining the main-land, to Key West, at 
+[ia]([ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7) |10867|belong we have the key-note to the common 
+[ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|11012|living beings, it gave him the key to many mys- 
+[ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|12431|common Five-Finger (Asterias) gives the key to 
+[ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|2616|and is the key to their whole organization. A 
+[ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|3049|fications ; and that we have already the key by 
+[ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|513|whole. It was Cuvier who found the key. He 
+[ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|5306|pitched on a different key, it is true, but a sound 
+[ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|673|and gave us the key-note to the natural affinities 
+[ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|7270|crescent, from Virginia Key and Key Biscayne, 
+[ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|7271|almost adjoining the main-land, to Key West, at 
+[ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|7490|light-house, built on Sand Key for the greater 
 
 
 ## Discussion 
@@ -74,7 +73,7 @@ Obtaining map from file hash to file barcode
 + cat /home/jorrit/proj/gn-hackathon/Identification-Key-Finder/log.tsv
 + grep 'archive.*hasVersion'
 + grep -v well-known
-+ sed -e 's+https://archive.org/download/\([^/]*\).*sha256/\(.*\)+\2\t\1+'
++ sed -e 's+[ia](https://archive.org/download/\([^/]*\).*sha256/\(.*\)+\2\t\1+'
 + sort
 + echo 'Obtaining map from barcode to BHL item'
 Obtaining map from barcode to BHL item
@@ -95,19 +94,64 @@ Joining on file hash and sorting
 + echo 'Joining on barcode and sorting'
 Joining on barcode and sorting
 + join --nocheck-order -t '	' -1 1 -2 2 /home/jorrit/proj/gn-hackathon/Identification-Key-Finder/barcode-itemurl.tsv /home/jorrit/proj/gn-hackathon/Identification-Key-Finder/barcode-line-match.tsv
-+ sed -e 's+\(.*\)\t\(.*\)\t\(.*\)\t\(.*\)\t\(.*\)+https://archive.org/download/\1\t\2\thttps://deeplinker.bio/\3\t\4\t\5+'
++ sed -e 's+\(.*\)\t\(.*\)\t\(.*\)\t\(.*\)\t\(.*\)+[ia](https://archive.org/download/\1\t\2\t[ocr text](https://deeplinker/\3\t\4\t\5+'
 
 real	46m36.495s
 user	9m22.076s
 sys	3m57.117s
 ```
 
-## system info
+### result stats
+Counting unique number of line matches again BHL corpus using regex ```\bkey\b```.
+
+```shell
+$ zcat itemurl-line-match.tsv.gz | sort | uniq | wc -l```)
+758180
+```
+
+Number of unique BHL items with matches. 
+
+```shell 
+$ zcat itemurl-line-match.tsv.gz | sort | uniq | cut -f2 | sort | uniq | wc -l```)
+74719
+```
+
+Top 10 BHL items with most number of matches.
+```shell 
+$ zcat itemurl-line-match.tsv.gz | sort | uniq | cut -f2 | sort | uniq -c | sort -nr \
+    | sed "s/^[^0-9]*//g" | tr ' ' '\t' \
+    > matches-per-item-sorted-descending.tsv
+$ head matches-per-item-sorted-descending.tsv
+4127	https://www.biodiversitylibrary.org/item/107146
+4020	https://www.biodiversitylibrary.org/item/118981
+3002	https://www.biodiversitylibrary.org/item/262128
+2916	https://www.biodiversitylibrary.org/item/107123
+2576	https://www.biodiversitylibrary.org/item/107124
+2505	https://www.biodiversitylibrary.org/item/194866
+2440	https://www.biodiversitylibrary.org/item/261069
+2231	https://www.biodiversitylibrary.org/item/194618
+2111	https://www.biodiversitylibrary.org/item/107164
+2049	https://www.biodiversitylibrary.org/item/29885
+```
+
+Distribution of number of matches across BHL items with at least one match.
+```R
+plot(item_matches$count, log="xy")
+item_matches <- read.csv('matches-per-item-sorted-descending.tsv', header=F, sep='\t')
+names(item_matches) <- c('count', 'item_url')
+plot(item_matches$count, log="xy", xlab='bhl items', ylab='match count', main='distribution of bhl items by decreasing match count')
+```
+This R script produce the plot below. 
+
+[![matches-per-item-sorted-descending.png](./matches-per-item-sorted-descending.png)]
+
+The graph shows that there's few items with many counts (i.e., about 100 items with 500 matches or more) and many items with few count (i.e., about 65k items with 10 matches or less). More analysis is needed to indicate whether number of match counts is a way to detect likely identification key candidates. 
+
+### system info
 
 Ubuntu Linux 18.04 running on Lenovo Laptop T430 8GB RAM with dual core Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz.
 
-Data
-BHL Corpus 
+### BHL Corpus 
 
 
 Total number of items in the BHL catalogue:
