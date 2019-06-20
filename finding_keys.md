@@ -69,7 +69,7 @@ The script was executed using the BHL corpus on an external hardisk attached to 
 
 Some further analysis conveyed that 75k items (32% of items with ocr text) has one or more matches to ```\bkey\b```. Also, the graph shows that there are few items with many counts (i.e., about 100 items with 500 matches or more) and many items with few count (i.e., about 65k items with 10 matches or less). More analysis is needed to indicate whether number of match counts is a way to detect likely identification key in BHL items.
 
-[![matches-per-item-sorted-descending.png](./matches-per-item-sorted-descending.png)]
+![matches-per-item-sorted-descending.png](./matches-per-item-sorted-descending.png)
 
 For more details on the results, please refer to appendix A. This appendix contains code snippets and result logs that help to reproduce the results provided that the same version of the BHL archive is used. If you decide to do that, you can algorithmically verify that the same Preston BHL archive is used.
 
