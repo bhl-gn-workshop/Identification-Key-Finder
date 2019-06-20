@@ -67,7 +67,7 @@ The script was executed using the BHL corpus on an external hardisk attached to 
 [ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiversitylibrary.org/item/174408) [ocr-text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|7270|crescent, from Virginia Key and Key Biscayne, 
 [ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiversitylibrary.org/item/174408) [ocr-text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|7271|almost adjoining the main-land, to Key West, at 
 
-Some further analysis conveyed that 75k items (32% of items with ocr text) has one or more matches to ```\bkey\b```. Also, the graph shows that there are few items with many counts (i.e., about 100 items with 500 matches or more) and many items with few count (i.e., about 65k items with 10 matches or less). More analysis is needed to indicate whether number of match counts is a way to detect likely identification key in BHL items.
+Some further analysis conveyed that 75k items (32% of items with ocr text) has one or more matches to ```\bkey\b```. Also, the graph shows that there are few items with many counts (i.e., about 100 items with 500 matches or more) and many items with few counts (i.e., about 65k items with 10 matches or less). More analysis is needed to indicate whether number of match counts is a way to detect likely identification key in BHL items.
 
 ![matches-per-item-sorted-descending.png](./matches-per-item-sorted-descending.png)
 
