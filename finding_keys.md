@@ -54,7 +54,7 @@ After acquiring the BHL corpus and establishing that our BHL corpus contained ab
 
 The script was executed using the BHL corpus on an external hardisk attached to a dual core lenovo T430 laptop with 8GB of memory using regular expression using regular expression ```\bkey\b```. It took about 50 minutes for the script to match all the lines of the ocr text. The output of the script captured the line number, text, content hash and related BHL, internet archive and Preston urls in the file [itemurl-line-match.tsv](./itemurl-line-match.tsv.gz). The file contains 758k unique matches, including the 10 lines below. Note that the urls were turned into labels ia (internet archive), bhl (biodiversity heritage library) and ocr test (a url pointing to a preston archive at https://deeplinker.bio) to declutter the table representation.
 
- bhl item links | line number | matching line
+ item links | line number | matching line
   --- | --- | ---
 [ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiversitylibrary.org/item/174408) [ocr-text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7) |10867|belong we have the key-note to the common 
 [ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiversitylibrary.org/item/174408) [ocr-text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|11012|living beings, it gave him the key to many mys- 
@@ -66,7 +66,6 @@ The script was executed using the BHL corpus on an external hardisk attached to 
 [ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiversitylibrary.org/item/174408) [ocr-text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|673|and gave us the key-note to the natural affinities 
 [ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiversitylibrary.org/item/174408) [ocr-text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|7270|crescent, from Virginia Key and Key Biscayne, 
 [ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiversitylibrary.org/item/174408) [ocr-text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|7271|almost adjoining the main-land, to Key West, at 
-[ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiversitylibrary.org/item/174408) [ocr-text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|7490|light-house, built on Sand Key for the greater 
 
 Some further analysis conveyed that 75k items (32% of items with ocr text) has one or more matches to ```\bkey\b```. Also, the graph shows that there are few items with many counts (i.e., about 100 items with 500 matches or more) and many items with few count (i.e., about 65k items with 10 matches or less). More analysis is needed to indicate whether number of match counts is a way to detect likely identification key in BHL items.
 
