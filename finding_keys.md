@@ -1,27 +1,61 @@
 This page describes a method on how to find items with keys on BHL.
- 
-# Desired workflow for finding Keys
 
-A librarian, a biologist and two software engineers came up with the following highlevel key finding workflow: 
+# methods
+
+## Use cases
+
+To help develop a computational method to help detect occurrences of identification keys in biodiversity texts, a librarian, a biologist articulate the three use cases. The use cases inform envised detection and usage of identification keys in biodiversity texts.
+
+(include use cases)
+
+## method for detecting identification keys
+
+After articulating the use cases, the following method was developed to iteratively improve an algorithm to detect likely identification keys in biodiversity texts:
 
 1. get all the BHL data/ corpus
-2. find keys in the data 
+2. find lines containing likely identification keys in the corpus
 3. save results in a file with (at least) three columns: (1) Extracted matching line with "key" occurrence and (2) item id (3) line number of "key" occurrence
-4. Visually inspect results for false positives
-5. Need a oneliner to access line with "key" occurrence in context in the original file in cases where it is difficult to evaluate the extracted line.
+4. Domain expert visually inspects matching lines for false positives
+5. When needed, the expert reviews the original text containing the matching line
 6. Refine regular expression to work around false positives, go to 
 
 
-## experiment 
+# results 
 
-0. A BHL Corpus was acquired that contained 226k items with a volume of 120GB . Note that an estimated 20% of BHL OCR text was unavailable (see [BHL Completeness](./bhl_completeness.md)).
-1. a bash script, [find-keys.sh](./find-keys.sh) was created. The script takes two arguments (1) the location of the BHL corpus and (2) a regular expression for matching likely keys. 
-2. the scripts was run using regular expression ```\bkey\b``` on the full bhl corpus on the item level.
-3. the script completed in about 50 minutes on a 2011 dual core ubuntu linux laptop  
-4. the script completed a matching against all of BHL and captured the 758k unique results in [itemurl-line-match.tsv.gz](./itemurl-line-match.tsv.gz). The table below contains the first 10 lines of the file. For sake of simplicity the urls were turned into labels ia (internet archive), bhl (biodiversity heritage library) and ocr test (a preston archive at deeplinker)
+## aqcuisition of BHL corpus
+
+The BHL corpus was accessed via a Preston BHL archive. The archive used consisted of two versioned snapshots of the BHL corpus obtained over the period of period May-June 2019. Each snapshot contains item ocr texts as well as a detailed record from which url the ocr texts were obtained and when. Each obtained ocr text is identified by its content hash. A content hash is an algorithmically generated unique identifier based on, and only on, the content of the ocr text. In case of Preston, sha256 content hashes are used (see https://preston.guoda.bio). This detailed information help to establish a link between the content that was present at a specific time to a BHL item identifier. By using the Preston BHL archive, we can link ocr text to its bhl item identifier in addition to uniquely identifying what ocr text was used. In addition to this, the archive contains a record of missing ocr texts, or ocr texts that were unable to be accessed at the expected location in the internet archive.  
+
+The BHL archive was accessed using an external harddisk to optimize data retrieval. This archive was retrieved from a remote server location (e.g., https://deeplinker.bio) using rsync (add reference) prior to the workshop. The BHL archive total size was 120GB and consisted of XX ocr texts and a single tabular file containing the BHL item catalog. The item catalog is update weekly (Pers. Comm. Mike / Joel from EOL) and contains all items in BHL. 
+
+### completeness
+
+To assess the completeness of the used BHL corpus, the available ocr texts were linked to the BHL item catalog. This showed that out of 285k items, 57k items, or 20%, were missing ocr texts. The top 10 urls that failed to serve ocr texts for items were:
+
+```shell
+$ cat bhl_djvu_404.tsv | head
+https://archive.org/download/00921238.85096.emory.edu/00921238.85096.emory.edu_djvu.txt
+https://archive.org/download/02145706.5485.emory.edu/02145706.5485.emory.edu_djvu.txt
+https://archive.org/download/0220434.nlm.nih.gov/0220434.nlm.nih.gov_djvu.txt
+https://archive.org/download/03060843.1594.emory.edu/03060843.1594.emory.edu_djvu.txt
+https://archive.org/download/03060843.1595.emory.edu/03060843.1595.emory.edu_djvu.txt
+https://archive.org/download/03060843.1596.emory.edu/03060843.1596.emory.edu_djvu.txt
+https://archive.org/download/03060843.1597.emory.edu/03060843.1597.emory.edu_djvu.txt
+https://archive.org/download/03060843.1598.emory.edu/03060843.1598.emory.edu_djvu.txt
+https://archive.org/download/03060843.1599.emory.edu/03060843.1599.emory.edu_djvu.txt
+https://archive.org/download/03060843.1600.emory.edu/03060843.1600.emory.edu_djvu.txt
+```
+
+The full list of broken urls links can be found at [bhl_djvu_404.tsv](./bhl_djvu_404.tsv).
+
+### detecting identification keys
+
+After acquiring the BHL corpus and establishing that our BHL corpus contained about 80% of the available ocr texts, a bash script, [find_keys.sh](./find_keys.sh) was created to match all lines in ocr text against a regular expression. The script takes two arguments (1) the location of the BHL corpus and (2) a regular expression for matching likely keys.
+
+The script was executed using the BHL corpus on an external hardisk attached to a dual core lenovo T430 laptop with 8GB of memory using regular expression using regular expression ```\bkey\b```. It took about 50 minutes for the script to match all the lines of the ocr text. The output of the script captured the line number, text, content hash and related BHL, internet archive and Preston urls in the file [itemurl-line-match.tsv](./itemurl-line-match.tsv.gz). The file contains 758k unique matches, including the 10 lines below. Note that the urls were turned into labels ia (internet archive), bhl (biodiversity heritage library) and ocr test (a url pointing to a preston archive at https://deeplinker.bio) to declutter the table representation.
 
  bhl item links | line number | matching line
-  --- | --- |--- | --- | ---
+  --- | --- | ---
 [ia]([ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7) |10867|belong we have the key-note to the common 
 [ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|11012|living beings, it gave him the key to many mys- 
 [ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|12431|common Five-Finger (Asterias) gives the key to 
@@ -34,6 +68,11 @@ A librarian, a biologist and two software engineers came up with the following h
 [ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|7271|almost adjoining the main-land, to Key West, at 
 [ia](https://archive.org/download/00921238.85096.emory.edu) [bhl](https://www.biodiveritylibrary.org/item/174408) [ocr text](https://deeplinker/80a66488fa27d4f5c2ed03914220c5f749d2469c5f7264ab7c08dc94ee8b6fc7)|7490|light-house, built on Sand Key for the greater 
 
+Some further analysis conveyed that 75k items (32% of items with ocr text) has one or more matches to ```\bkey\b```. Also, the graph shows that there are few items with many counts (i.e., about 100 items with 500 matches or more) and many items with few count (i.e., about 65k items with 10 matches or less). More analysis is needed to indicate whether number of match counts is a way to detect likely identification key in BHL items.
+
+[![matches-per-item-sorted-descending.png](./matches-per-item-sorted-descending.png)]
+
+For more details on the results, please refer to appendix A. This appendix contains code snippets and result logs that help to reproduce the results provided that the same version of the BHL archive is used. If you decide to do that, you can algorithmically verify that the same Preston BHL archive is used.
 
 ## Discussion 
 
@@ -48,7 +87,11 @@ Open questions/ideas:
 1. What tools are available to visually annotate and select texts that describe a Key?
 1. Which software libraries or platforms can help with text classification (e.g., does this text contain a key?) and segmentation (e.g., which part of the text is a key)? (Stanford CoreNLP, OpenNLP)
 
-## details
+## Appendix A
+
+This appendix contains logs and code snippets to help reproduce the results.
+
+The listing below contains the log of the execution of the [find_keys.sh](./find_keys.sh) scripts.
 
 ```shell
 $ time ./find_keys.sh /media/jorrit/cobaltblue/preston-bhl/ "\bkey\b"
@@ -102,6 +145,7 @@ sys	3m57.117s
 ```
 
 ### result stats
+
 Counting unique number of line matches again BHL corpus using regex ```\bkey\b```.
 
 ```shell
@@ -109,14 +153,14 @@ $ zcat itemurl-line-match.tsv.gz | sort | uniq | wc -l```)
 758180
 ```
 
-Number of unique BHL items with matches. 
+Calculating the number of unique BHL items with matches. 
 
 ```shell 
 $ zcat itemurl-line-match.tsv.gz | sort | uniq | cut -f2 | sort | uniq | wc -l```)
 74719
 ```
 
-Top 10 BHL items with most number of matches.
+Calculating the top 10 BHL items with most number of matches.
 ```shell 
 $ zcat itemurl-line-match.tsv.gz | sort | uniq | cut -f2 | sort | uniq -c | sort -nr \
     | sed "s/^[^0-9]*//g" | tr ' ' '\t' \
@@ -134,31 +178,31 @@ $ head matches-per-item-sorted-descending.tsv
 2049	https://www.biodiversitylibrary.org/item/29885
 ```
 
-Distribution of number of matches across BHL items with at least one match.
+Constructing a figure with a distribution of number of matches across BHL items with at least one match using R (see https://r-project.org ).
+
 ```R
 plot(item_matches$count, log="xy")
 item_matches <- read.csv('matches-per-item-sorted-descending.tsv', header=F, sep='\t')
 names(item_matches) <- c('count', 'item_url')
 plot(item_matches$count, log="xy", xlab='bhl items', ylab='match count', main='distribution of bhl items by decreasing match count')
 ```
-This R script produce the plot below. 
+The R script above was used to produce the plot below. 
 
 [![matches-per-item-sorted-descending.png](./matches-per-item-sorted-descending.png)]
 
-The graph shows that there's few items with many counts (i.e., about 100 items with 500 matches or more) and many items with few count (i.e., about 65k items with 10 matches or less). More analysis is needed to indicate whether number of match counts is a way to detect likely identification key candidates. 
-
 ### system info
-
-Ubuntu Linux 18.04 running on Lenovo Laptop T430 8GB RAM with dual core Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz.
+A Ubuntu Linux 18.04 operating was used, running on Lenovo Laptop T430 8GB RAM with dual core Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz.
 
 ### BHL Corpus 
 
 
-Total number of items in the BHL catalogue:
+Calculate number of items in the BHL catalogue:
 ```
 $ cat item.txt | wc -l
 242511
 ```
+Note that the file item.txt was extracted from the Preston BHL archive used.
+
 
 Total number of files in the Preston BHL archive:
 ```
