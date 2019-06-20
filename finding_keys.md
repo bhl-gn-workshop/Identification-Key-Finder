@@ -4,9 +4,7 @@ This page describes a method on how to find items with keys on BHL.
 
 ## Use cases
 
-To help develop a computational method to help detect occurrences of identification keys in biodiversity texts, a librarian, a biologist articulate the three use cases. The use cases inform envised detection and usage of identification keys in biodiversity texts.
-
-(include use cases)
+To help develop a computational method to help detect occurrences of identification keys in biodiversity texts, a librarian, a biologist articulate the three use cases. The use cases inform envised detection and usage of identification keys in biodiversity texts. See [key_lookup_usecases.md](./key_lookup_usecases.md) for the description of the use cases.
 
 ## method for detecting identification keys
 
