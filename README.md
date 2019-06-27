@@ -33,7 +33,8 @@ Index of Files:
  * [bhl_completeness.md](./bhl_completeness.md): This is a description of an assessment of the completeness of OCR text available through the BHL corpus.
  * [bhl_djvu_404.tsv](./bhl_djvu_404.tsv): This is a list of broken links that should point to OCR text on internet archive.
  * [BHLKeys.png](./BHLKeys.png): This image imagines a mockup of Identification Keys as an option in BHL subject search.
- * [BHLKeySamples.tsv.zip](./BHLKeySamples.tsv.zip): This is run of line-by-line matches of the entire BHL corpus coming from the Internet Archive. This contains "key" or "Key" when it appears alone.
+ * [BHLKeySamples.tsv.zip](./BHLKeySamples.tsv.zip): This is run of line-by-line matches of the entire BHL corpus coming from the Internet Archive based on the following regular expression: grep -r -n -i -e '\bkey\b'
+ * [BHLKeySamplesDeeplinker.tsv.zip](./BHLKeySamplesDeeplinker.tsv.zip): BHLKeySamples.tsv.zip with deeplinker.bio links to item files.
  * [find_keys.sh](./find_keys.sh): This script contains a search string that is applied to the BHL corpus and creates a list of the line number and URL(s) of the item. The URLs include links to the BHL item location, the Internet Archive location, and the text file.
  * [finding_keys.md](./finding_keys.md): This document details methods and results of a single run of the find_keys.sh script.
 * [hash-line-match.tsv.gz](./hash-line-match.tsv.gz): This is an intermediate file of finding_keys.sh .
