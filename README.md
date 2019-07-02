@@ -32,6 +32,7 @@ Index of Files:
  * [barcode-itemurl.tsv.gz](./barcode-itemurl.tsv.gz): This is an intermediate file relating barcodes of the items to the URL from the BHL from the data experiment scanning the entire corpus line-by-line of the BHL.
  * [bhl_completeness.md](./bhl_completeness.md): This is a description of an assessment of the completeness of OCR text available through the BHL corpus.
  * [bhl_djvu_404.tsv](./bhl_djvu_404.tsv): This is a list of broken links that should point to OCR text on internet archive.
+ * [BHLKeyFinderReport.pdf](./BHLKeyFinderReport.pdf): A report documenting our experiments, insights and ideas around finding identification keys in BHL. 
  * [BHLKeys.png](./BHLKeys.png): This image imagines a mockup of Identification Keys as an option in BHL subject search.
  * [BHLKeySamples.tsv.zip](./BHLKeySamples.tsv.zip): This is run of line-by-line matches of the entire BHL corpus coming from the Internet Archive based on the following regular expression: grep -r -n -i -e '\bkey\b'
  * [BHLKeySamplesDeeplinker.tsv.zip](./BHLKeySamplesDeeplinker.tsv.zip): BHLKeySamples.tsv.zip with deeplinker.bio links to item files.
