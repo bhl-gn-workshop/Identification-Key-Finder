@@ -4,6 +4,8 @@
 
 https://github.com/bhl-gn-workshop/info
 
+[![DOI](https://zenodo.org/badge/192409609.svg)](https://zenodo.org/badge/latestdoi/192409609)
+
 Contributers, alphabetically: Jorrit Poelen (Global Biotic Interactions, https://globalbioticinteractions.org), Jonathan Rees (Encyclopedia of Life, https://eol.org), Katja Schulz (Encyclopedia of Life, https://eol.org), Kelli Trei (University of Illinois at Urbana-Champaign, University Library, https://library.illinois.edu/).
 
 This work was conducted as part of this workshop with representatives from the BHL (https://biodiversitylibrary.org) and Global Names (http://globalnames.org/). Searching and browsing the vast BHL corpus can be challenging with the tools currently available, e.g., sample search results. We want to explore ways to enrich BHL metadata, so users have more options to filter search results. We decided to focus on tools to filter identification keys because we expected that they would be easy to locate in the BHL corpus based on their headings and textual structure. The files in this repository include attempts and data used, as well as discussions of what did not work.
